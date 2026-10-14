@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seamless Spark – Home Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { navy: { DEFAULT: '#0B2545', 700: '#13315C', 50: '#F5F8FC' }, spark: { DEFAULT: '#F28C28', dark: '#D97706' }, ink: '#1E293B', line: '#E2E8F0' },
+  fontFamily: { heading: ['Manrope','system-ui','sans-serif'], body: ['Inter','system-ui','sans-serif'] },
+  boxShadow: { card: '0 10px 30px -12px rgba(11,37,69,.18)' } } } }
+</script>
+<style>
+:root { box-sizing: border-box; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+html { scroll-behavior: smooth; }
+body { font-family: Inter, system-ui, sans-serif; color: #1E293B; background: #fff; }
+h1,h2,h3 { font-family: Manrope, system-ui, sans-serif; color: #0B2545; }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; border-radius:.75rem; padding:.75rem 1.25rem; font-size:.875rem; font-weight:600; transition:.2s; }
+.btn:hover { transform: translateY(-2px); }
+.reveal { opacity:0; transform: translateY(24px); transition: .5s; }
+.reveal.in { opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } html { scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+<header id="nav" class="fixed inset-x-0 z-50 transition" style="top:env(safe-area-inset-top,0px)">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
+    <a href="#" id="logo" class="font-heading text-lg font-extrabold text-white">Seamless <span class="text-spark">Spark</span></a>
+    <nav class="hidden items-center gap-6 lg:flex" id="links">
+      <a href="#" class="text-sm font-medium text-spark">Home</a>
+      <a href="#services" class="nl text-sm font-medium text-white/90">Services</a>
+      <a href="#" class="nl text-sm font-medium text-white/90">Residential &amp; Commercial</a>
+      <a href="#" class="nl text-sm font-medium text-white/90">About</a>
+      <a href="#" class="nl text-sm font-medium text-white/90">Projects</a>
+      <a href="#" class="nl text-sm font-medium text-white/90">AMC</a>
+      <a href="#" class="nl text-sm font-medium text-white/90">FAQ</a>
+      <a href="#" class="nl text-sm font-medium text-white/90">Contact</a>
+    </nav>
+    <a href="#" class="btn hidden bg-spark text-white shadow-card hover:bg-spark-dark lg:inline-flex">Request a Quote</a>
+    <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false" class="text-white lg:hidden">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <nav id="mobile" class="hidden flex-col gap-1 border-t border-line bg-white px-5 pb-4 lg:hidden">
+    <a class="py-3 text-sm font-medium text-spark" href="#">Home</a>
+    <a class="py-3 text-sm font-medium text-navy" href="#services">Services</a>
+    <a class="py-3 text-sm font-medium text-navy" href="#">Residential &amp; Commercial</a>
+    <a class="py-3 text-sm font-medium text-navy" href="#">About</a>
+    <a class="py-3 text-sm font-medium text-navy" href="#">Projects</a>
+    <a class="py-3 text-sm font-medium text-navy" href="#">AMC</a>
+    <a class="py-3 text-sm font-medium text-navy" href="#">FAQ</a>
+    <a class="py-3 text-sm font-medium text-navy" href="#">Contact</a>
+  </nav>
+</header>
+
+<main id="main"><div id="page-home">
+<section class="bg-gradient-to-br from-navy via-navy to-navy-700 pb-24 pt-36 text-white">
+  <div class="mx-auto max-w-4xl px-5">
+    <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-spark">Plumbing &amp; Electrical Services</p>
+    <h1 class="text-5xl font-extrabold sm:text-7xl" style="color:#fff">SEAMLESS <span class="text-spark">SPARK</span></h1>
+    <p class="mt-3 font-heading text-lg font-bold italic text-spark">YOUR PROPERTY, OUR PRIORITY</p>
+    <p class="mt-4 text-xl font-semibold text-white/90">Reliable Electrical &amp; Plumbing Solutions for Every Space.</p>
+    <p class="mt-3 max-w-2xl text-white/75">From electrical installations and repairs to complete plumbing solutions and preventive maintenance, Seamless Spark delivers professional services for residential and commercial properties.</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#" class="btn bg-spark text-white shadow-card hover:bg-spark-dark">Call Now</a>
+      <a href="#" class="btn text-white" style="background:#16a34a">WhatsApp Us</a>
+      <a href="#" class="btn border border-white/40 text-white hover:bg-white/10">Request a Free Quote →</a>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="py-20">
+  <div class="mx-auto max-w-6xl px-5">
+    <h2 class="reveal text-3xl font-extrabold">Complete Electrical &amp; Plumbing Solutions</h2>
+    <div id="cards" class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+  </div>
+</section>
+
+<section class="bg-navy-50 py-20">
+  <div class="mx-auto max-w-6xl px-5">
+    <h2 class="reveal text-3xl font-extrabold">Why Choose Seamless Spark?</h2>
+    <div id="why" class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+  </div>
+</section>
+
+<section class="py-20">
+  <div class="mx-auto max-w-6xl px-5 reveal">
+    <h2 class="text-3xl font-extrabold">Our Work</h2>
+    <p class="mt-2 text-ink/70">Project photos will appear here once real job photos are added.</p>
+    <a href="#" class="btn mt-6 bg-navy text-white hover:bg-navy-700">Explore Our Projects →</a>
+  </div>
+</section>
+
+<section class="bg-navy-50 py-20"><div class="mx-auto max-w-6xl px-5"><h2 class="reveal text-3xl font-extrabold">Our Best Service for Valuable Clients</h2><div class="mt-8 grid gap-6 md:grid-cols-2"><div class="rounded-2xl bg-white p-6 shadow-card"><h3 class="text-xl font-bold">Bangalore, Karnataka</h3><p class="mt-1 text-sm text-spark">Indiranagar and surrounding areas within 10 km</p><p class="mt-3 text-sm text-ink/75">Attibele · Anekal · Chandapura · Bommasandra Industrial Area · Bommanahalli · Madiwala · BTM Layout · Tilak Nagar · Marathahalli · HSR Layout · Koramangala · Sarjapur</p></div><div class="rounded-2xl bg-white p-6 shadow-card"><h3 class="text-xl font-bold">Hosur, Tamil Nadu</h3><p class="mt-1 text-sm text-spark">Hosur and surrounding areas</p><p class="mt-3 text-sm text-ink/75">Zuzuvadi · SIPCOT Industrial Area (Phase 1 &amp; 2) · Bagalur · Shoolagiri · Ashok Leyland (Unit 1 &amp; 2) · Mathigiri</p></div></div></div></section>
+<section class="bg-navy py-16 text-center text-white">
+  <div class="mx-auto max-w-6xl px-5">
+    <h2 class="text-3xl font-extrabold" style="color:#fff">Need Reliable Electrical or Plumbing Services?</h2>
+    <p class="mx-auto mt-3 max-w-xl text-white/75">Get professional assistance for your installation, repair, and maintenance requirements.</p>
+    <div class="mt-6 flex flex-wrap justify-center gap-3">
+      <a href="#" class="btn bg-spark text-white hover:bg-spark-dark">Call Now</a>
+      <a href="#" class="btn border border-white/40 text-white hover:bg-white/10">Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+</div><div id="page-other" class="hidden"></div></main>
+
+<footer class="bg-navy text-white/80">
+  <div class="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4">
+    <div><p class="font-heading text-xl font-extrabold text-white">Seamless <span class="text-spark">Spark</span></p>
+      <p class="mt-1 text-sm text-spark">Reliable Solutions for Every Space</p><p class="mt-1 text-xs font-bold tracking-wide text-spark">YOUR PROPERTY, OUR PRIORITY</p>
+      <p class="mt-3 text-sm">Electrical and plumbing installation, repair and maintenance for residential and commercial spaces.</p></div>
+    <div><h3 class="mb-3 text-sm font-bold uppercase tracking-wide" style="color:#fff">Quick Links</h3>
+      <ul class="space-y-2 text-sm"><li>Home</li><li>About Us</li><li>Our Services</li><li>Projects</li><li>AMC Plans</li><li>Contact Us</li></ul></div>
+    <div><h3 class="mb-3 text-sm font-bold uppercase tracking-wide" style="color:#fff">Our Services</h3>
+      <ul class="space-y-2 text-sm"><li>Electrical Services</li><li>Plumbing Services</li><li>Maintenance Services</li><li>Residential Services</li><li>Commercial Services</li></ul></div>
+    <div><h3 class="mb-3 text-sm font-bold uppercase tracking-wide" style="color:#fff">Contact</h3>
+      <ul class="space-y-2 text-sm"><li>+91 96496 42791</li><li>seamless12spark@gmail.com</li><li>Hosur, Tamil Nadu</li><li>Bangalore, Karnataka</li><li>Mon–Sat: 9:00 AM – 7:00 PM</li></ul></div>
+  </div>
+  <div class="border-t border-white/10 py-5 text-center text-xs">© 2026 Seamless Spark. All Rights Reserved. | <a href="#/privacy" class="hover:text-spark">Privacy Policy</a> | <a href="#/terms" class="hover:text-spark">Terms &amp; Conditions</a></div>
+</footer>
+
+<a href="#" aria-label="Chat on WhatsApp" class="fixed right-5 z-40 grid h-14 w-14 place-items-center rounded-full text-white shadow-card" style="background:#16a34a;bottom:calc(1.25rem + env(safe-area-inset-bottom,0px))">
+  <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"/></svg>
+</a>
+
+<script>
+const services = [
+  ['⚡','Electrical Installation & Repairs','Installation, troubleshooting and repair for homes and businesses.'],
+  ['🚰','Plumbing Installation & Repairs','Installation, inspection and repair of plumbing systems.'],
+  ['💡','Lighting, Switches & Wiring','Lighting, switchboards, wiring and rewiring.'],
+  ['💧','Water Leakage & Pipe Repairs','Leakage detection, pipe repair and replacement.'],
+  ['🛁','Bathroom & Kitchen Plumbing','Fixtures, sinks, taps, pipelines and fittings.'],
+  ['🔧','Maintenance & AMC Services','Scheduled inspections and ongoing support.'],
+];
+const why = ['Skilled Technical Team','Safety-Focused Work','Reliable Service','Quality Workmanship','Residential & Commercial Expertise','Customer-Focused Approach'];
+document.getElementById('cards').innerHTML = services.map(([i,t,d],n) => `
+  <a href="#" class="reveal group block h-full rounded-2xl border border-line bg-white p-6 transition hover:-translate-y-1 hover:shadow-card" style="transition-delay:${n*50}ms">
+    <div class="text-3xl">${i}</div><h3 class="mt-4 text-lg font-bold">${t}</h3>
+    <p class="mt-2 text-sm text-ink/70">${d}</p>
+    <span class="mt-4 inline-flex text-sm font-semibold text-navy group-hover:text-spark">Learn More →</span></a>`).join('');
+document.getElementById('why').innerHTML = why.map((t,n) => `
+  <div class="reveal flex items-center gap-4 rounded-2xl bg-white p-5 shadow-card" style="transition-delay:${n*50}ms">
+    <span class="grid h-12 w-12 place-items-center rounded-xl bg-navy text-spark">✔</span><p class="font-semibold text-navy">${t}</p></div>`).join('');
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '-60px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const nav = document.getElementById('nav'), logo = document.getElementById('logo'), btn = document.getElementById('menuBtn'), mob = document.getElementById('mobile');
+function paint() {
+  const solid = scrollY > 24 || !mob.classList.contains('hidden');
+  nav.classList.toggle('bg-white/95', solid); nav.classList.toggle('shadow-card', solid);
+  logo.style.color = solid ? '#0B2545' : '#fff'; btn.style.color = solid ? '#0B2545' : '#fff';
+  document.querySelectorAll('.nl').forEach(a => a.style.color = solid ? '#0B2545' : 'rgba(255,255,255,.9)');
+}
+addEventListener('scroll', paint, { passive: true });
+btn.onclick = () => { mob.classList.toggle('hidden'); mob.classList.toggle('flex'); btn.setAttribute('aria-expanded', !mob.classList.contains('hidden')); paint(); };
+paint();
+</script>
+<script>
+const routes = {'Home':'#/','Services':'#/services','Residential & Commercial':'#/residential-commercial','About':'#/about','Projects':'#/projects','AMC':'#/amc','FAQ':'#/faq','Contact':'#/contact','Request a Quote':'#/contact','Request a Free Quote →':'#/contact','Get a Free Quote':'#/contact','Explore Our Projects →':'#/projects','Learn More →':'#/services'};
+document.querySelectorAll('a').forEach(a => { const t = a.textContent.trim(); if (routes[t]) a.setAttribute('href', routes[t]); });
+const H = (t, s) => `<section class="bg-gradient-to-br from-navy to-navy-700 pb-14 pt-32 text-white"><div class="mx-auto max-w-6xl px-5"><h1 class="text-3xl font-extrabold sm:text-5xl" style="color:#fff">${t}</h1>${s?`<p class="mt-3 max-w-2xl text-white/80">${s}</p>`:''}</div></section>`;
+const CTA = (t='Need Reliable Electrical or Plumbing Services?', s='Get professional assistance for your installation, repair, and maintenance requirements.') => `<section class="bg-navy py-16 text-center text-white"><div class="mx-auto max-w-6xl px-5"><h2 class="text-3xl font-extrabold" style="color:#fff">${t}</h2><p class="mx-auto mt-3 max-w-xl text-white/75">${s}</p><div class="mt-6 flex flex-wrap justify-center gap-3"><a href="#/contact" class="btn bg-spark text-white hover:bg-spark-dark">Get a Free Quote</a></div></div></section>`;
+const PH = (t) => `<div class="mb-4 grid h-32 place-items-center rounded-xl bg-gradient-to-br from-navy to-navy-700 text-xs text-white/60">${t}</div>`;
+const card = 'rounded-2xl border border-line bg-white p-6 shadow-card';
+const ul = (a, ic='✔') => `<ul class="mt-3 space-y-1 text-sm">${a.map(x=>`<li class="flex gap-2"><span class="text-spark">${ic}</span>${x}</li>`).join('')}</ul>`;
+const sv = [['Electrical Services',[['⚡','Electrical Installation & Repairs','Professional electrical installation, troubleshooting, and repair solutions for residential and commercial properties.',['Fault finding and repair','New installations','Safety-focused work']],['💡','Lighting, Switches & Wiring','Lighting installation, switchboard installation, electrical wiring, rewiring, and electrical fixture maintenance.',['Lighting and switchboards','Wiring and rewiring','Fixture maintenance']]]],['Plumbing Services',[['🚰','Plumbing Installation & Repairs','Professional installation, inspection, and repair of plumbing systems.',['Installation and inspection','System repairs','Suitable fittings']],['💧','Water Leakage & Pipe Repairs','Leakage detection, pipe repairs, damaged pipe replacement, and plumbing troubleshooting.',['Leak detection','Pipe repair and replacement','Troubleshooting']],['🛁','Bathroom & Kitchen Plumbing','Installation and maintenance of bathroom fixtures, kitchen sinks, taps, pipelines, and plumbing fittings.',['Fixtures and taps','Kitchen sinks','Pipelines and fittings']]]],['Maintenance Services',[['🔧','Preventive Maintenance & AMC','Scheduled inspections, maintenance visits, and ongoing support for residential and commercial properties.',['Scheduled visits','Preventive maintenance','Ongoing support']]]]];
+const cats = [['🏠','Residential Services','Electrical and plumbing installation, repair and maintenance for homes.',['Independent homes','Apartments','Residential societies','Villas','Rental properties']],['🏢','Commercial Services','Technical support for businesses and commercial properties.',['Corporate offices','Commercial buildings','Shops and retail stores','Restaurants','Supermarkets','Commercial complexes']],['👷','Builders & Property Managers','Installation and maintenance support for projects and managed properties.',['Builders','Contractors','Property management companies','Facility managers','Real estate developers']]];
+const steps = [['Consultation','Understand customer requirements.'],['Inspection & Planning','Evaluate the work and recommend appropriate solutions.'],['Professional Execution','Complete the work using suitable tools, materials, and safety practices.'],['Final Inspection','Review completed work and address customer concerns.']];
+const plans = [['Residential AMC','Request Quote','Suitable for homes, apartments, and residential properties.',['Regular electrical inspections','Plumbing inspections','Leakage checks']],['Commercial AMC','Request Quote','Suitable for offices, retail stores, restaurants, and commercial buildings.',['Electrical maintenance','Scheduled maintenance visits','Maintenance reporting']],['Customized AMC','Custom Pricing','Tailored packages for apartments, property managers, and businesses.',['Preventive maintenance','Services chosen with you','Maintenance reporting']]];
+const fld = 'mt-1 w-full rounded-xl border border-line px-4 py-3 text-sm focus:border-spark focus:outline-none';
+const pages = {
+ services: () => H('Our Services','Electrical, plumbing and maintenance solutions for every space.') + sv.map(([g,l],i)=>`<section class="py-16 ${i%2?'bg-navy-50':''}"><div class="mx-auto max-w-6xl px-5"><h2 class="text-2xl font-extrabold">${g}</h2><div class="mt-8 grid gap-6 md:grid-cols-2">${l.map(([ic,t,d,b])=>`<div class="${card}">${PH('Service photo placeholder')}<div class="text-3xl">${ic}</div><h3 class="mt-3 text-xl font-bold">${t}</h3><p class="mt-2 text-sm text-ink/75">${d}</p>${ul(b)}<a href="#/contact" class="btn mt-5 bg-navy text-white hover:bg-navy-700">Request Service</a></div>`).join('')}</div></div></section>`).join('') + CTA(),
+ 'residential-commercial': () => H('Residential & Commercial Services','Who we serve.') + `<section class="py-16"><div class="mx-auto grid max-w-6xl gap-6 px-5 lg:grid-cols-3">${cats.map(([ic,t,d,i])=>`<div class="${card}">${PH('Photo placeholder')}<div class="text-3xl">${ic}</div><h2 class="mt-3 text-xl font-bold">${t}</h2><p class="mt-2 text-sm text-ink/75">${d}</p>${ul(i,'•')}</div>`).join('')}</div></section>` + CTA('Discuss Your Project With Our Team','Tell us what you need and we will get back to you.'),
+ about: () => H('About Seamless Spark','Reliable Solutions for Every Space.') + `<section class="py-16"><div class="mx-auto max-w-3xl px-5 text-lg">Seamless Spark provides electrical and plumbing installation, repair, and maintenance solutions for residential and commercial spaces. We aim to deliver reliable technical services with an emphasis on safety, quality workmanship, and customer satisfaction.</div></section><section class="bg-navy-50 py-16"><div class="mx-auto grid max-w-6xl gap-6 px-5 md:grid-cols-2"><div class="${card}"><h2 class="text-xl font-bold">Our Mission</h2><p class="mt-2 text-sm">To provide dependable electrical and plumbing solutions that support the safety, functionality, and long-term maintenance of every property we serve.</p></div><div class="${card}"><h2 class="text-xl font-bold">Our Vision</h2><p class="mt-2 text-sm">To become a trusted electrical and plumbing services provider known for professionalism, technical expertise, and consistent service quality.</p></div></div></section><section class="py-16"><div class="mx-auto max-w-6xl px-5"><h2 class="text-2xl font-extrabold">Our Work Approach</h2><div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">${steps.map(([t,d],i)=>`<div class="rounded-2xl border border-line p-5"><span class="text-sm font-bold text-spark">Step ${i+1}</span><h3 class="mt-2 font-bold">${t}</h3><p class="mt-1 text-sm text-ink/75">${d}</p></div>`).join('')}</div></div></section><section class="bg-navy-50 py-16"><div class="mx-auto max-w-6xl px-5"><h2 class="text-2xl font-extrabold">Safety & Quality</h2><ul class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">${['Safety-first work practices','Appropriate tools and equipment','Quality materials','Professional workmanship','Customer communication'].map(x=>`<li class="rounded-xl bg-white p-4 text-sm font-semibold shadow-card">${x}</li>`).join('')}</ul><div class="mt-8 grid h-48 place-items-center rounded-2xl border-2 border-dashed border-line text-sm text-ink/50">Team photographs and company information go here</div></div></section>` + CTA(),
+ projects: () => H('Our Projects','Real work, added with customer permission.') + `<section class="py-12"><div class="mx-auto max-w-6xl px-5"><div class="flex flex-wrap gap-2">${['All','Electrical Installations','Plumbing Installations','Electrical Repairs','Plumbing Repairs','Residential Projects','Commercial Projects','Maintenance Projects','Before & After'].map((c,i)=>`<span class="rounded-full border px-4 py-2 text-sm font-medium ${i?'border-line':'border-navy bg-navy text-white'}">${c}</span>`).join('')}</div><div class="mt-10 rounded-2xl border-2 border-dashed border-line p-12 text-center text-ink/60">Project photos coming soon. Real jobs are added in the project config; the live site then shows a filterable grid, full-screen preview and before/after slider.</div></div></section>` + CTA(),
+ amc: () => H('Protect Your Property With Professional Maintenance','Keep your electrical and plumbing systems functioning efficiently with planned inspections, preventive maintenance, and scheduled service visits.') + `<section class="py-16"><div class="mx-auto grid max-w-6xl gap-6 px-5 lg:grid-cols-3">${plans.map(([t,p,d,i])=>`<div class="${card} flex flex-col"><h2 class="text-xl font-bold">${t}</h2><p class="mt-1 text-2xl font-extrabold text-spark">${p}</p><p class="mt-2 text-sm text-ink/75">${d}</p><h3 class="mt-4 text-sm font-bold">Included</h3>${ul(i)}<h3 class="mt-4 text-sm font-bold">Excluded</h3>${ul(['Parts and materials unless agreed','Work outside the agreed scope'],'✕')}<p class="mt-4 text-sm"><b>Visit frequency:</b> customizable</p><a href="#/contact" class="btn mt-6 bg-navy text-white hover:bg-navy-700">Request AMC Quote</a></div>`).join('')}</div></section><section class="bg-navy-50 py-12"><div class="mx-auto max-w-6xl px-5"><h2 class="text-2xl font-extrabold">Maintenance Services</h2><ul class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">${['Regular electrical inspections','Electrical maintenance','Plumbing inspections','Leakage checks','Scheduled maintenance visits','Preventive maintenance','Maintenance reporting'].map(x=>`<li class="rounded-xl bg-white p-4 text-sm font-semibold shadow-card">${x}</li>`).join('')}</ul></div></section>` + CTA('Ready for planned maintenance?','Request a quote and we will tailor a plan to your property.'),
+ contact: () => H('Contact Us / Request a Quote','Call, WhatsApp or send an enquiry.') + `<section class="py-16"><div class="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-5"><aside class="space-y-4 lg:col-span-2"><p class="rounded-2xl border border-line p-4">📞 +91 96496 42791</p><p class="rounded-2xl border border-line p-4">💬 WhatsApp: +91 96496 42791</p><p class="rounded-2xl border border-line p-4">✉️ seamless12spark@gmail.com</p><p class="rounded-2xl border border-line p-4 text-sm">📍 <b>Hosur, Tamil Nadu</b><br>DNO 24/15, Janapar Street, Hosur, Krishnagiri, Tamil Nadu 635109</p><p class="rounded-2xl border border-line p-4 text-sm">📍 <b>Bangalore, Karnataka</b><br>#43/2 Suresh Nilayam, Sri Vinayaka Temple Street, Opposite Fathima School, Udayanagar, Bangalore North, Bangalore, Karnataka 560016</p><p class="rounded-2xl border border-line p-4 text-sm">🕒 <b>Business hours</b><br>Mon–Sat: 9:00 AM – 7:00 PM</p><div class="space-y-3 text-sm text-ink/80"><p class="font-bold text-navy">Our Best Service for Valuable Clients</p><p><b>Bangalore</b> (Indiranagar and areas within 10 km): Attibele, Anekal, Chandapura, Bommasandra Industrial Area, Bommanahalli, Madiwala, BTM Layout, Tilak Nagar, Marathahalli, HSR Layout, Koramangala, Sarjapur</p><p><b>Hosur</b>: Zuzuvadi, SIPCOT Industrial Area (Phase 1 &amp; 2), Bagalur, Shoolagiri, Ashok Leyland (Unit 1 &amp; 2), Mathigiri</p></div></aside><div class="lg:col-span-3"><form id="enq" novalidate class="grid gap-4 sm:grid-cols-2"><label class="text-sm font-medium">Full Name<input name="n" class="${fld}"></label><label class="text-sm font-medium">Phone Number<input name="p" type="tel" class="${fld}"></label><label class="text-sm font-medium">Email (optional)<input type="email" class="${fld}"></label><label class="text-sm font-medium">Location / Address<input name="l" class="${fld}"></label><label class="text-sm font-medium">Service Required<select class="${fld}"><option>Select…</option>${['Electrical Installation','Electrical Repair','Plumbing Installation','Plumbing Repair','Lighting & Wiring','Water Leakage Repair','Bathroom & Kitchen Plumbing','AMC / Maintenance','Other Services'].map(o=>`<option>${o}</option>`).join('')}</select></label><label class="text-sm font-medium">Property Type<select class="${fld}"><option>Select…</option>${['Home / Apartment','Office','Shop / Retail','Restaurant','Builder / Property Manager','Other'].map(o=>`<option>${o}</option>`).join('')}</select></label><label class="text-sm font-medium sm:col-span-2">Project Description<textarea rows="4" class="${fld}"></textarea></label><label class="flex gap-2 text-sm sm:col-span-2"><input type="checkbox" name="c"> I agree to be contacted regarding my enquiry.</label><p id="msg" role="alert" class="text-sm text-red-600 sm:col-span-2"></p><div class="sm:col-span-2"><button class="btn bg-spark text-white hover:bg-spark-dark">Send Enquiry on WhatsApp</button> <a href="#" class="btn text-white" style="background:#16a34a">Send via WhatsApp</a></div></form></div></div></section>`,
+ faq: () => H('Frequently Asked Questions','Quick answers about working with Seamless Spark.') + `<section class="py-16"><div class="mx-auto max-w-3xl space-y-3 px-5">${[['What areas do you serve?','Our service areas are listed on the Contact page. Send your location with an enquiry and we will confirm whether we can help.'],['Do you charge for a site visit?','Visit and inspection charges, if any, will be confirmed by the team before a visit is booked.'],['How soon can you respond to an enquiry or emergency?','Call or WhatsApp us for the quickest response. We do not promise fixed response times on this website; timing is confirmed when you contact us.'],['Do you provide AMC for apartments and offices?','Yes, we offer residential, commercial and customized maintenance plans. Request an AMC quote and we will tailor it to your property.'],['What are your working hours?','We work Monday to Saturday, 9:00 AM to 7:00 PM.'],['How do I get a quotation?','Use the Request a Quote form, call, or message us on WhatsApp with details of the work. Quotations follow a discussion or inspection.']].map(([q,a])=>`<details class="group rounded-2xl border border-line bg-white p-5 shadow-card"><summary class="cursor-pointer list-none font-bold text-navy">${q}<span class="float-right text-spark group-open:rotate-45">+</span></summary><p class="mt-3 text-sm text-ink/75">${a}</p></details>`).join('')}</div></section>` + CTA('Still have a question?','Call, WhatsApp or send an enquiry and we will help.'),
+ privacy: () => H('Privacy Policy') + `<section class="py-12"><div class="mx-auto max-w-3xl space-y-4 px-5 text-sm"><p>Seamless Spark collects the details you submit through the enquiry form only to respond to your enquiry.</p><p>We do not sell your information. You can ask us to delete your enquiry details at any time.</p></div></section>`,
+ terms: () => H('Terms & Conditions') + `<section class="py-12"><div class="mx-auto max-w-3xl space-y-4 px-5 text-sm"><p>Information on this website is general and may change. Quotations are provided after discussing or inspecting the work.</p><p>Scope, pricing and schedules are agreed with you directly before work begins.</p></div></section>`
+};
+function route() {
+  const r = location.hash.replace(/^#\/?/, '');
+  const home = document.getElementById('page-home'), other = document.getElementById('page-other');
+  if (!r || !pages[r]) { home.classList.remove('hidden'); other.classList.add('hidden'); }
+  else { home.classList.add('hidden'); other.classList.remove('hidden'); other.innerHTML = pages[r](); }
+  window.scrollTo(0, 0);
+  document.getElementById('mobile').classList.add('hidden'); document.getElementById('mobile').classList.remove('flex');
+  const f = document.getElementById('enq');
+  if (f) f.onsubmit = e => { e.preventDefault(); const m = document.getElementById('msg'); if (f.n.value.length < 2 || !/^[+\d][\d\s-]{7,14}$/.test(f.p.value) || f.l.value.length < 3 || !f.c.checked) { m.textContent = 'Please fill name, a valid phone, location and tick consent.'; return; } const s = f.querySelectorAll('select'); const msg = 'Hello Seamless Spark, I need help.\nName: ' + f.n.value + '\nPhone: ' + f.p.value + '\nLocation: ' + f.l.value + '\nService: ' + s[0].value + '\nProperty: ' + s[1].value + '\nDetails: ' + f.querySelector('textarea').value; const url = 'https://wa.me/919649642791?text=' + encodeURIComponent(msg); window.open(url, '_blank'); f.outerHTML = '<div role="status" class="rounded-2xl bg-navy-50 p-8"><h2 class="text-2xl font-bold">Almost done!</h2><p class="mt-2">WhatsApp should open with your enquiry ready. Tap Send there to deliver it to us.</p><a data-keep="1" href="' + url + '" target="_blank" rel="noopener" class="btn mt-4 text-white" style="background:#16a34a">Open WhatsApp</a></div>'; };
+  paint();
+}
+addEventListener('hashchange', route); route();
+</script>
+<script>
+document.addEventListener('click', e => { const a = e.target.closest('a'); if (!a) return;
+  const t = (a.textContent + ' ' + (a.getAttribute('aria-label') || '')).toLowerCase();
+  if (t.includes('whatsapp') && !a.dataset.keep) { let m = 'Hello Seamless Spark, I would like to enquire about your electrical and plumbing services. Please contact me.'; const f = document.getElementById('enq'); if (f && f.n.value) { const s = f.querySelectorAll('select'); m = 'Hello Seamless Spark, I need help.\nName: ' + f.n.value + '\nPhone: ' + f.p.value + '\nLocation: ' + f.l.value + '\nService: ' + s[0].value + '\nProperty: ' + s[1].value + '\nDetails: ' + f.querySelector('textarea').value; } a.href = 'https://wa.me/919649642791?text=' + encodeURIComponent(m); a.target = '_blank'; a.rel = 'noopener'; }
+  else if (t.trim().startsWith('call now')) { e.preventDefault(); location.href = 'tel:+919649642791'; } });
+</script>
+</body>
+</html>
